@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pilot For Travel - أفضل شركة سفر في السعودية. باقات سياحية متكاملة لأجمل الوجهات حول العالم">
+  <meta name="keywords" content="سفر، سياحة، رحلات، باقات سياحية، السعودية">
+  <title>Pilot For Travel and Trips | رحلات لا تُنسى</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #2563eb;
+      --secondary: #7c3aed;
+      --accent: #f59e0b;
+      --dark: #1e293b;
+      --light: #f8fafc;
+      --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      line-height: 1.8;
+      color: var(--dark);
+      background: var(--light);
+      overflow-x: hidden;
+    }
+
+    /* ===== Header ===== */
+    header {
+      position: relative;
+      height: 100vh;
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 100%),
+                  url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1920&q=80') center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 2rem;
+      overflow: hidden;
+    }
+
+    .logo {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    header h1 {
+      font-size: 4rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      animation: fadeInDown 1s ease;
+    }
+
+    header p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      animation: fadeInUp 1s ease 0.3s backwards;
+    }
+
+    .btn {
+      padding: 1rem 3rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 50px;
+      background: white;
+      color: var(--primary);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      animation: fadeInUp 1s ease 0.6s backwards;
+    }
+
+    .btn:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      animation: bounce 2s infinite;
+    }
+
+    .scroll-indicator i {
+      font-size: 2rem;
+      color: white;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(10px); }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ===== Sections ===== */
+    section {
+      padding: 5rem 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 3rem;
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--dark);
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      width: 100px;
+      height: 4px;
+      background: var(--gradient);
+      position: absolute;
+      bottom: -15px;
+      right: 50%;
+      transform: translateX(50%);
+      border-radius: 2px;
+    }
+
+    /* ===== About Section ===== */
+    .about {
+      background: white;
+      border-radius: 30px;
+      padding: 4rem;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      margin-top: -5rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .about p {
+      font-size: 1.3rem;
+      text-align: center;
+      color: #64748b;
+      max-width: 900px;
+      margin: 0 auto;
+      line-height: 2;
+    }
+
+    /* ===== Features Section ===== */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    }
+
+    .feature-card i {
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+
+    .feature-card p {
+      color: #64748b;
+      font-size: 1.1rem;
+    }
+
+    /* ===== Packages Section ===== */
+    .packages {
+      background: linear-gradient(180deg, var(--light) 0%, white 100%);
+    }
+
+    .packages-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+
+    .package-card {
+      background: white;
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+      transition: all 0.4s ease;
+      position: relative;
+    }
+
+    .package-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+    }
+
+    .package-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .package-card:hover img {
+      transform: scale(1.1);
+    }
+
+    .package-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: var(--accent);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      z-index: 1;
+    }
+
+    .package-content {
+      padding: 2rem;
+    }
+
+    .package-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+
+    .package-card p {
+      color: #64748b;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .package-price {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--primary);
+      margin: 1.5rem 0;
+    }
+
+    .package-features {
+      margin: 1.5rem 0;
+      text-align: right;
+    }
+
+    .package-features li {
+      list-style: none;
+      padding: 0.5rem 0;
+      color: #64748b;
+      font-size: 1rem;
+    }
+
+    .package-features li i {
+      color: #10b981;
+      margin-left: 0.5rem;
+    }
+
+    .btn-book {
+      width: 100%;
+      padding: 1rem;
+      background: var(--gradient);
+      color: white;
+      border: none;
+      border-radius: 15px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-book:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    }
+
+    /* ===== Reviews Section ===== */
+    .reviews {
+      background: white;
+      padding: 5rem 2rem;
+    }
+
+    .reviews-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .review {
+      background: var(--light);
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .review:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    }
+
+    .review::before {
+      content: '"';
+      position: absolute;
+      top: -1rem;
+      right: 1rem;
+      font-size: 6rem;
+      color: var(--primary);
+      opacity: 0.2;
+      font-family: serif;
+    }
+
+    .stars {
+      color: var(--accent);
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .review p:first-of-type {
+      font-size: 1.1rem;
+      color: #475569;
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+
+    .review p:last-of-type {
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    /* ===== Gallery Section ===== */
+    .gallery {
+      padding: 5rem 2rem;
+      background: var(--light);
+    }
+
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .gallery-container img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 20px;
+      transition: all 0.4s ease;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .gallery-container img:hover {
+      transform: scale(1.05) rotate(2deg);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    }
+
+    /* ===== Contact Section ===== */
+    .contact {
+      background: white;
+      padding: 5rem 2rem;
+    }
+
+    .contact-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .contact-item {
+      text-align: center;
+      padding: 2rem;
+      background: var(--light);
+      border-radius: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .contact-item:hover {
+      background: var(--gradient);
+      color: white;
+      transform: translateY(-5px);
+    }
+
+    .contact-item i {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .contact-item:hover i {
+      color: white;
+    }
+
+    .contact-item h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    form {
+      background: var(--light);
+      padding: 3rem;
+      border-radius: 25px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 1.2rem;
+      margin-bottom: 1.5rem;
+      border: 2px solid #e2e8f0;
+      border-radius: 15px;
+      font-size: 1.1rem;
+      font-family: 'Cairo', sans-serif;
+      transition: all 0.3s ease;
+    }
+
+    form input:focus,
+    form textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    form textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 4rem 2rem 2rem;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-section h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: white;
+    }
+
+    .footer-section p,
+    .footer-section a {
+      color: #94a3b8;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.8rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section a:hover {
+      color: white;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-links a {
+      width: 50px;
+      height: 50px;
+      background: var(--gradient);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    }
+
+    .footer-bottom {
+      padding-top: 2rem;
+      border-top: 1px solid #334155;
+      color: #94a3b8;
+    }
+
+    /* ===== Animations ===== */
+    .animate {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease;
+    }
+
+    .animate.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== Payment Modal ===== */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 3rem;
+      border-radius: 25px;
+      max-width: 500px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      animation: slideUp 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      font-size: 2rem;
+      color: #64748b;
+      cursor: pointer;
+      background: none;
+      border: none;
+      transition: all 0.3s ease;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .close-modal:hover {
+      color: var(--primary);
+      transform: rotate(90deg);
+    }
+
+    .payment-methods {
+      margin-top: 2rem;
+    }
+
+    .payment-option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      border: 2px solid #e2e8f0;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .payment-option:hover {
+      border-color: var(--primary);
+      background: #f8fafc;
+      transform: translateX(-5px);
+    }
+
+    .payment-option.selected {
+      border-color: var(--primary);
+      background: rgba(37, 99, 235, 0.05);
+    }
+
+    .payment-logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .payment-logo img {
+      height: 35px;
+      object-fit: contain;
+    }
+
+    .payment-logo i {
+      font-size: 2rem;
+      color: var(--primary);
+    }
+
+    .payment-info {
+      flex: 1;
+      margin: 0 1rem;
+    }
+
+    .payment-info h4 {
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
+      color: var(--dark);
+    }
+
+    .payment-info p {
+      font-size: 0.9rem;
+      color: #64748b;
+    }
+
+    .payment-check {
+      width: 24px;
+      height: 24px;
+      border: 2px solid #e2e8f0;
+      border-radius: 50%;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .payment-option.selected .payment-check {
+      border-color: var(--primary);
+      background: var(--primary);
+    }
+
+    .payment-option.selected .payment-check::after {
+      content: '✓';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .modal-footer {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .price-summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .price-summary h3 {
+      font-size: 1.3rem;
+      color: var(--dark);
+    }
+
+    .price-summary .price {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--primary);
+    }
+
+    .btn-confirm-payment {
+      width: 100%;
+      padding: 1.2rem;
+      background: var(--gradient);
+      color: white;
+      border: none;
+      border-radius: 15px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-confirm-payment:hover:not(:disabled) {
+      transform: scale(1.02);
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn-confirm-payment:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* ===== Loading Animation ===== */
+    .loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+
+    .loading.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border: 5px solid #f3f4f6;
+      border-top-color: var(--primary);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      header p {
+        font-size: 1.2rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      .packages-container,
+      .gallery-container {
+        grid-template-columns: 1fr;
+      }
+
+      .logo {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+      }
+
+      .modal-content {
+        padding: 2rem;
+      }
+
+      .payment-option {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Loading Screen ===== -->
+  <div class="loading" id="loading">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <div class="logo">
+      <img src="c:\Users\a_m_s\OneDrive\Desktop\pngg.png" alt="Pilot Logo" style="width: 200%; height: 200%; border-radius: 200حء;">
+    </div>
+    
+    <h1>Pilot For Travel and Trips</h1>
+    <p>نأخذك نحو رحلات لا تُنسى وتجارب تفوق الخيال 🌍</p>
+    <button class="btn" onclick="scrollToSection('packages')">استكشف الآن</button>
+    <div class="scroll-indicator">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </header>
+
+  <!-- ===== About Section ===== -->
+  <section class="about animate">
+    <h2>من نحن</h2>
+    <p>نحن فريق متخصص في تنظيم الرحلات والسفر حول العالم، نقدم باقات متكاملة تشمل التذاكر، الإقامة، والأنشطة السياحية. كل ذلك لتعيش تجربة مميزة تجمع بين الراحة والمغامرة مع أفضل الأسعار وأعلى مستويات الخدمة.</p>
+    
+    <div class="features">
+      <div class="feature-card">
+        <i class="fas fa-plane-departure"></i>
+        <h3>رحلات منظمة</h3>
+        <p>تنظيم شامل من الألف إلى الياء</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-hotel"></i>
+        <h3>إقامة فاخرة</h3>
+        <p>فنادق 5 نجوم بأفضل المواقع</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-headset"></i>
+        <h3>دعم 24/7</h3>
+        <p>فريق متاح طوال الوقت لخدمتك</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-shield-alt"></i>
+        <h3>ضمان آمن</h3>
+        <p>حجوزات مؤمنة ومضمونة</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Packages Section ===== -->
+  <section class="packages animate" id="packages">
+    <h2>باقات السفر المميزة</h2>
+    <div class="packages-container">
+
+      <div class="package-card">
+        <span class="package-badge">🔥 الأكثر مبيعاً</span>
+        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80" alt="Paris" loading="lazy">
+        <div class="package-content">
+          <h3>باريس - فرنسا</h3>
+          <p>استمتع بجمال برج إيفل وجولات نهر السين</p>
+          <ul class="package-features">
+            <li><i class="fas fa-check"></i> 7 أيام / 6 ليالي</li>
+            <li><i class="fas fa-check"></i> إقامة في فندق 5 نجوم</li>
+            <li><i class="fas fa-check"></i> جولات سياحية يومية</li>
+            <li><i class="fas fa-check"></i> تذاكر طيران ذهاب وعودة</li>
+          </ul>
+          <div class="package-price">5,400 ريال</div>
+          <button class="btn-book" onclick="bookPackage('باريس - فرنسا', 5400)">احجز الآن</button>
+        </div>
+      </div>
+
+      <div class="package-card">
+        <span class="package-badge">⭐ الأعلى تقييماً</span>
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Maldives" loading="lazy">
+        <div class="package-content">
+          <h3>جزر المالديف</h3>
+          <p>استرخِ في جزر الجنة بمياهها الفيروزية الساحرة</p>
+          <ul class="package-features">
+            <li><i class="fas fa-check"></i> 5 أيام / 4 ليالي</li>
+            <li><i class="fas fa-check"></i> منتجع خاص على الشاطئ</li>
+            <li><i class="fas fa-check"></i> رياضات مائية مجانية</li>
+            <li><i class="fas fa-check"></i> عشاء رومانسي على البحر</li>
+          </ul>
+          <div class="package-price">7,200 ريال</div>
+          <button class="btn-book" onclick="bookPackage('جزر المالديف', 7200)">احجز الآن</button>
+        </div>
+      </div>
+
+      <div class="package-card">
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80" alt="Switzerland" loading="lazy">
+        <div class="package-content">
+          <h3>سويسرا</h3>
+          <p>استكشف جبال الألب وسحر الطبيعة الخضراء</p>
+          <ul class="package-features">
+            <li><i class="fas fa-check"></i> 8 أيام / 7 ليالي</li>
+            <li><i class="fas fa-check"></i> جولة في جبال الألب</li>
+            <li><i class="fas fa-check"></i> زيارة البحيرات السويسرية</li>
+            <li><i class="fas fa-check"></i> رحلة قطار بانورامية</li>
+          </ul>
+          <div class="package-price">6,500 ريال</div>
+          <button class="btn-book" onclick="bookPackage('سويسرا', 6500)">احجز الآن</button>
+        </div>
+      </div>
+
+      <div class="package-card">
+        <img src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?auto=format&fit=crop&w=800&q=80" alt="Tokyo" loading="lazy">
+        <div class="package-content">
+          <h3>طوكيو - اليابان</h3>
+          <p>مزيج بين الحداثة والثقافة اليابانية الأصيلة</p>
+          <ul class="package-features">
+            <li><i class="fas fa-check"></i> 6 أيام / 5 ليالي</li>
+            <li><i class="fas fa-check"></i> زيارة معابد كيوتو</li>
+            <li><i class="fas fa-check"></i> جولة في أحياء طوكيو</li>
+            <li><i class="fas fa-check"></i> تجربة الطعام الياباني</li>
+          </ul>
+          <div class="package-price">6,000 ريال</div>
+          <button class="btn-book" onclick="bookPackage('طوكيو - اليابان', 6000)">احجز الآن</button>
+        </div>
+      </div>
+
+      <div class="package-card">
+        <span class="package-badge">💰 عرض خاص</span>
+        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=80" alt="Cappadocia" loading="lazy">
+        <div class="package-content">
+          <h3>كابادوكيا - تركيا</h3>
+          <p>حلّق بالمناطيد وشاهد الصخور العجيبة والمناظر الخلابة</p>
+          <ul class="package-features">
+            <li><i class="fas fa-check"></i> 5 أيام / 4 ليالي</li>
+            <li><i class="fas fa-check"></i> رحلة منطاد ساحرة</li>
+            <li><i class="fas fa-check"></i> جولة في المدن القديمة</li>
+            <li><i class="fas fa-check"></i> عشاء تركي تقليدي</li>
+          </ul>
+          <div class="package-price">4,800 ريال</div>
+          <button class="btn-book" onclick="bookPackage('كابادوكيا - تركيا', 4800)">احجز الآن</button>
+        </div>
+      </div>
+
+      <div class="package-card">
+        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80" alt="Dubai" loading="lazy">
+        <div class="package-content">
+          <h3>دبي - الإمارات</h3>
+          <p>مدينة المستقبل، تسوق، مغامرات وصحراء مذهلة</p>
+          <ul class="package-features">
+            <li><i class="fas fa-check"></i> 4 أيام / 3 ليالي</li>
+            <li><i class="fas fa-check"></i> زيارة برج خليفة</li>
+            <li><i class="fas fa-check"></i> رحلة سفاري صحراوية</li>
+            <li><i class="fas fa-check"></i> تسوق في مولات دبي</li>
+          </ul>
+          <div class="package-price">4,300 ريال</div>
+          <button class="btn-book" onclick="bookPackage('دبي - الإمارات', 4300)">احجز الآن</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== Reviews Section ===== -->
+  <section class="reviews animate">
+    <h2>آراء عملائنا السعداء</h2>
+    <div class="reviews-container">
+      <div class="review">
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p>تجربة رائعة! الرحلة منظمة بعناية والفريق متعاون جدًا. كل التفاصيل كانت مثالية من البداية للنهاية</p>
+        <p><i class="fas fa-user-circle"></i> سارة من جدة</p>
+      </div>
+      <div class="review">
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p>أفضل شركة سفر تعاملت معها، خدمات راقية ومواعيد دقيقة. الأسعار ممتازة والجودة عالية جداً</p>
+        <p><i class="fas fa-user-circle"></i> محمد من الرياض</p>
+      </div>
+      <div class="review">
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p>قضينا وقتاً لا يُنسى في سويسرا، مناظر رائعة وتنظيم مذهل. شكراً لفريق Pilot على كل شيء</p>
+        <p><i class="fas fa-user-circle"></i> ريم من الدمام</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Gallery Section ===== -->
+  <section class="gallery animate">
+    <h2>معرض صور الرحلات</h2>
+    <div class="gallery-container">
+      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80" alt="Road in desert" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Beach" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=800&q=80" alt="Mountain view" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80" alt="Island" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=80" alt="Waterfall" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Forest beach" loading="lazy">
+    </div>
+  </section>
+
+  <!-- ===== Contact Section ===== -->
+  <section class="contact animate">
+    <h2>تواصل معنا</h2>
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fas fa-phone-alt"></i>
+          <h3>اتصل بنا</h3>
+          <p>+966 594 602 383</p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <h3>راسلنا</h3>
+          <p>Saveandtravel@icloud.com</p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <h3>موقعنا</h3>
+          <p>الجوف المملكة العربية السعودية</p>
+        </div>
+      </div>
+
+      <form onsubmit="handleSubmit(event)">
+        <input type="text" placeholder="الاسم الكامل" required>
+        <input type="email" placeholder="البريد الإلكتروني" required>
+        <input type="tel" placeholder="رقم الجوال" required>
+        <textarea rows="4" placeholder="اكتب رسالتك هنا..." required></textarea>
+        <button type="submit" class="btn">إرسال الرسالة</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Pilot For Travel</h3>
+        <p>رحلات استثنائية لوجهات عالمية مع أفضل الخدمات والأسعار التنافسية</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h3>روابط سريعة</h3>
+        <a href="#packages">باقات السفر</a>
+        <a href="#about">من نحن</a>
+        <a href="#gallery">معرض الصور</a>
+        <a href="#contact">تواصل معنا</a>
+      </div>
+      
+      <div class="footer-section">
+        <h3>الوجهات الشائعة</h3>
+        <a href="#">باريس - فرنسا</a>
+        <a href="#">جزر المالديف</a>
+        <a href="#">سويسرا</a>
+        <a href="#">طوكيو - اليابان</a>
+      </div>
+      
+      <div class="footer-section">
+        <h3>خدماتنا</h3>
+        <a href="#">حجز الطيران</a>
+        <a href="#">حجز الفنادق</a>
+        <a href="#">الجولات السياحية</a>
+        <a href="#">تأجير السيارات</a>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>© 2025 Pilot For Travel and Trips | جميع الحقوق محفوظة</p>
+      <p>صُمم وطُوّر بـ ❤️ في المملكة العربية السعودية</p>
+    </div>
+  </footer>
+
+  <!-- ===== Payment Modal ===== -->
+  <div class="modal" id="paymentModal">
+    <div class="modal-content">
+      <button class="close-modal" onclick="closePaymentModal()">×</button>
+      <h2 style="text-align: center; margin-bottom: 1rem;">اختر طريقة الدفع</h2>
+      <p style="text-align: center; color: #64748b; margin-bottom: 2rem;" id="packageName">اختر الطريقة المناسبة لإتمام عملية الحجز</p>
+      
+      <div class="payment-methods">
+        <div class="payment-option" onclick="selectPayment('applepay')">
+          <div class="payment-logo">
+            <i class="fab fa-apple"></i>
+          </div>
+          <div class="payment-info">
+            <h4>Apple Pay</h4>
+            <p>ادفع بسهولة وأمان باستخدام Apple Pay</p>
+          </div>
+          <div class="payment-check"></div>
+        </div>
+
+        <div class="payment-option" onclick="selectPayment('tabby')">
+          <div class="payment-logo">
+            <svg width="80" height="30" viewBox="0 0 80 30" fill="none">
+              <text x="5" y="20" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#3ABEBD">tabby</text>
+            </svg>
+          </div>
+          <div class="payment-info">
+            <h4>Tabby - قسّمها على 4 دفعات</h4>
+            <p>اشتري الآن وادفع لاحقاً بدون فوائد</p>
+          </div>
+          <div class="payment-check"></div>
+        </div>
+
+        <div class="payment-option" onclick="selectPayment('tamara')">
+          <div class="payment-logo">
+            <svg width="80" height="30" viewBox="0 0 80 30" fill="none">
+              <text x="2" y="20" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#000">tamara</text>
+            </svg>
+          </div>
+          <div class="payment-info">
+            <h4>Tamara - قسّط مشترياتك</h4>
+            <p>قسّم مشترياتك على 3 أو 4 دفعات بدون فوائد</p>
+          </div>
+          <div class="payment-check"></div>
+        </div>
+
+        <div class="payment-option" onclick="selectPayment('creditcard')">
+          <div class="payment-logo">
+            <i class="fas fa-credit-card"></i>
+          </div>
+          <div class="payment-info">
+            <h4>البطاقة الائتمانية</h4>
+            <p>Visa, Mastercard, Mada</p>
+          </div>
+          <div class="payment-check"></div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <div class="price-summary">
+          <h3>المجموع الكلي:</h3>
+          <div class="price" id="modalPrice">0 ريال</div>
+        </div>
+        <button class="btn-confirm-payment" onclick="confirmPayment()" id="confirmBtn" disabled>
+          تأكيد الدفع
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== JavaScript ===== -->
+  <script>
+    // Loading Screen
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loading').classList.add('hidden');
+      }, 1000);
+    });
+
+    // Scroll Animation
+    const animateElements = document.querySelectorAll('.animate');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    animateElements.forEach(el => observer.observe(el));
+
+    // Smooth Scroll Function
+    function scrollToSection(id) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    // Payment Modal Variables
+    let selectedPaymentMethod = null;
+    let currentPackage = null;
+    let currentPrice = 0;
+
+    // Book Package Function
+    function bookPackage(destination, price) {
+      currentPackage = destination;
+      currentPrice = price;
+      document.getElementById('modalPrice').textContent = price.toLocaleString() + ' ريال';
+      document.getElementById('packageName').textContent = 'حجز رحلة ' + destination;
+      document.getElementById('paymentModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      
+      // Reset selection
+      selectedPaymentMethod = null;
+      document.querySelectorAll('.payment-option').forEach(option => {
+        option.classList.remove('selected');
+      });
+      document.getElementById('confirmBtn').disabled = true;
+    }
+
+    // Close Payment Modal
+    function closePaymentModal() {
+      document.getElementById('paymentModal').classList.remove('active');
+      document.body.style.overflow = 'auto';
+      selectedPaymentMethod = null;
+      document.querySelectorAll('.payment-option').forEach(option => {
+        option.classList.remove('selected');
+      });
+      document.getElementById('confirmBtn').disabled = true;
+    }
+
+    // Select Payment Method
+    function selectPayment(method) {
+      selectedPaymentMethod = method;
+      
+      document.querySelectorAll('.payment-option').forEach(option => {
+        option.classList.remove('selected');
+      });
+      
+      event.currentTarget.classList.add('selected');
+      document.getElementById('confirmBtn').disabled = false;
+    }
+
+    // Confirm Payment
+    function confirmPayment() {
+      if (!selectedPaymentMethod) {
+        alert('الرجاء اختيار طريقة الدفع');
+        return;
+      }
+
+      // Apple Pay
+      if (selectedPaymentMethod === 'applepay') {
+        if (window.ApplePaySession && ApplePaySession.canMakePayments()) {
+          alert('سيتم توجيهك لإتمام الدفع عبر Apple Pay\n\nملاحظة: يتطلب إعداد merchant account من Apple');
+        } else {
+          alert('❌ Apple Pay غير متاح على هذا الجهاز أو المتصفح');
+        }
+      }
+
+      // Tabby
+      else if (selectedPaymentMethod === 'tabby') {
+        const tabbyInstallment = (currentPrice / 4).toFixed(2);
+        alert(`✅ تم اختيار Tabby\n\n📦 ${currentPackage}\n💰 ${currentPrice.toLocaleString()} ريال\n📊 4 دفعات × ${tabbyInstallment} ريال\n\n🔗 سيتم توجيهك لموقع Tabby...\n\n📞 للمساعدة: +966 594 602 383`);
+      }
+
+      // Tamara
+      else if (selectedPaymentMethod === 'tamara') {
+        const tamaraInstallment = (currentPrice / 3).toFixed(2);
+        alert(`✅ تم اختيار Tamara\n\n📦 ${currentPackage}\n💰 ${currentPrice.toLocaleString()} ريال\n📊 3 دفعات × ${tamaraInstallment} ريال\n\n🔗 سيتم توجيهك لموقع Tamara...\n\n📞 للمساعدة: +966 594 602 383`);
+      }
+
+      // البطاقة الائتمانية
+      else if (selectedPaymentMethod === 'creditcard') {
+        alert(`✅ الدفع بالبطاقة الائتمانية\n\n📦 ${currentPackage}\n💰 ${currentPrice.toLocaleString()} ريال\n\n🔗 سيتم توجيهك لصفحة الدفع الآمنة...\n\n📞 للمساعدة: +966 594 602 383`);
+      }
+
+      closePaymentModal();
+    }
+
+    // Close modal when clicking outside
+    document.getElementById('paymentModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closePaymentModal();
+      }
+    });
+
+    // Form Submit Handler
+    function handleSubmit(event) {
+      event.preventDefault();
+      alert('✅ تم إرسال رسالتك بنجاح!\n\nسنتواصل معك في أقرب وقت ممكن.\n\n📞 +966 594 602 383\n📧 Saveandtravel@icloud.com');
+      event.target.reset();
+    }
+
+    // Add parallax effect to header
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const header = document.querySelector('header');
+      if (header && scrolled < window.innerHeight) {
+        header.style.transform = `translateY(${scrolled * 0.5}px)`;
+      }
+    });
+
+    // Lazy loading images optimization
+    if ('loading' in HTMLImageElement.prototype) {
+      const images = document.querySelectorAll('img[loading="lazy"]');
+      images.forEach(img => {
+        img.src = img.src;
+      });
+    }
+  </script>
+
+</body>
+</html>
